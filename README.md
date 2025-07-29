@@ -41,7 +41,7 @@ ssmcon <instance-id>
 
 ## Example Outputs
 
-### `ec2ls`
+### `ec2ls` – List all EC2 instances (Instance ID, State, Availability Zone, ASG name)
 
 ```text
 ---------------------------------------------------------------------------------+
@@ -56,7 +56,7 @@ ssmcon <instance-id>
 +----------------------------+-------------+----------------------+--------------+
 ```
 
-### `ec2run`
+### `ec2run` – List only running EC2 instances
 
 ```text
 ------------------------------------------------------------------------------+
@@ -69,7 +69,7 @@ ssmcon <instance-id>
 +----------------------------+-------------+----------------------+-----------+
 ```
 
-### `ssmcon`
+### `ssmcon` – Connect to an instance via AWS SSM Session Manager
 
 ```text
 ssmcon i-0207b2c4b38407fda
