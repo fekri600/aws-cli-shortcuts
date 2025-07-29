@@ -1,0 +1,5 @@
+# Ignore OS-specific and temporary files
+.DS_Store
+*.swp
+*.log
+*.bak
