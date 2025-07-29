@@ -50,8 +50,8 @@ ssmcon <instance-id>
 |                       ASG                      |     AZ      |     InstanceId       |    State     |
 +------------------------------------------------+-------------+----------------------+--------------+
 |  CodeDeploy_i2507bluegreen-demo-dg_d-D77YEWY5E |  us-east-1b |  i-0207b2c4b38407fda |  running     |
-|  terraform-2025072901182320100000000d          |  us-east-1b |  i-0e07f67a9354a6a29 |  terminated  |
-|  terraform-2025072901182320100000000d          |  us-east-1a |  i-05e41ad4e036cc379 |  terminated  |
+|  terraform-2025                                |  us-east-1b |  i-0e07f67a9354a6a29 |  terminated  |
+|  terraform-2025                                |  us-east-1a |  i-05e41ad4e036cc379 |  terminated  |
 |  CodeDeploy_i2507bluegreen-demo-dg_d-D77YEWY5E |  us-east-1a |  i-00f03e615fd3d49fe |  running     |
 +------------------------------------------------+-------------+----------------------+--------------+
 ```
@@ -150,10 +150,4 @@ If you add new aliases, edit `aws-shortcuts-install.sh` and re-run:
 
 MIT License. Free to use and share.
 
-```
 
----
-
-Would you like me to also **provide the same for the `aws-shortcuts-install.sh` file** (so you can copy/paste without breaking formatting)?  
-Or **bundle both (README + script) in one clean block so you can just paste them into your repo directly**? Which do you prefer?
-```
