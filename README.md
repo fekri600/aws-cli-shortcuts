@@ -103,14 +103,21 @@ This will:
 * Reload your shell so the shortcuts are available immediately.
 
 
-On modern macOS, the default shell is `zsh`, but some terminals or IDEs may still open `bash`.
-To make the shortcuts work in **both shells**, run:
+On modern macOS, the default shell is `zsh`. The installer will automatically detect your shell and add the shortcuts to the appropriate configuration file.
 
+**Note for zsh users**: After installation, you may need to manually reload your shell by running:
+```bash
+source ~/.zshrc
+```
+
+Or simply restart your terminal.
+
+To make the shortcuts work in **both bash and zsh** (if you use both), you can manually add the source line to both files:
 ```bash
 # Add shortcuts to bash sessions
 echo "source ~/aws-shortcuts.sh" >> ~/.bashrc
 
-# Add shortcuts to zsh sessions
+# Add shortcuts to zsh sessions (if not already added by installer)
 echo "source ~/aws-shortcuts.sh" >> ~/.zshrc
 
 # Reload both
