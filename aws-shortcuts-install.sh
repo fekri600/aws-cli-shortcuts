@@ -52,6 +52,29 @@ ssmput() {
 }
 
 alias ssmls='aws ssm describe-parameters --query "Parameters[*].{Name:Name,Type:Type,CreatedDate:LastModifiedDate}" --output table'
+
+ssmdel() {
+  local path="$1"
+  if [ -z "$path" ]; then
+    echo "Usage: ssmdel <ssm-path-or-prefix>"
+    return 1
+  fi
+
+  # Check if the input is a "directory" (ends with slash)
+  if [[ "$path" == */ ]]; then
+    echo "Deleting all parameters under directory: $path"
+    /usr/local/bin/aws ssm get-parameters-by-path --path "$path" --recursive --query "Parameters[].Name" --output text |
+      /usr/bin/tr '\t' '\n' | while IFS= read -r param; do
+        echo "Deleting: $param"
+        /usr/local/bin/aws ssm delete-parameter --name "$param"
+      done
+  else
+    echo "Deleting parameter: $path"
+    /usr/local/bin/aws ssm delete-parameter --name "$path"
+  fi
+}
+
+}
 EOF
 
 chmod 644 "$SHORTCUTS_FILE"
